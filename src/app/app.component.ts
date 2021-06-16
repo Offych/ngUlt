@@ -4,11 +4,19 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="red">
+      <button class="btn btn-primary" (click)="handleClick()">Change Name</button>
       <h1 [innerHTML]='title'> </h1>
       <h1>{{title}}</h1>
-      <input type="text" [value]='name'>
+      <input 
+        type="text"
+        [value]='name'
+        (input)="handleInput($event)"
+        (blur)="handleBlur($event)">
       <div>
-
+      <img [src]="logo" alt="">
+      </div>
+      <div>
+        {{name}}
       </div>
     </div>
   `,
@@ -17,12 +25,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Ultimate Angular';
-  logo: string = "../img/logo.jpg"
+  logo: string = "https://blog.whoishiring.io/content/images/2017/03/todd_us.png"
   name: string = 'Sasha'
 
 
   constructor() {
     
   }
+
+  handleBlur(event: any) {
+    this.name = event.target.value;
+    console.log(this.name)
+  }
+  handleInput(event: any) {
+    this.name = event.target.value;
+  }
+  handleClick() {
+    this.name = 'Sashiko';
+  } 
 
 }
