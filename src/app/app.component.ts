@@ -9,9 +9,8 @@ import { Component } from '@angular/core';
       <h1>{{title}}</h1>
       <input 
         type="text"
-        [value]='name'
-        (input)="handleInput($event)"
-        (blur)="handleBlur($event)">
+        ([ngModel])="name"
+        ><!-- (ngModelChange)="handleChange($event)" -->
       <div>
       <img [src]="logo" alt="">
       </div>
@@ -43,5 +42,8 @@ export class AppComponent {
   handleClick() {
     this.name = 'Sashiko';
   } 
+  handleChange(value: string) {
+    this.name = value
+  }
 
 }
