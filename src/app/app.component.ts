@@ -1,8 +1,14 @@
 import { Component } from '@angular/core';
 
+
+interface Passenger {
+  id: number,
+  fullname: string,
+  checkedIn: boolean
+}
 @Component({
   selector: 'app-root',
-  template: `
+  /* template: `
     <div class="mx-5 my-5">
      <!--  <button class="btn btn-primary"  (click)="handleClick(username.value)">Get Value</button> -->
 <!--       <h1 [innerHTML]='title'> </h1> -->
@@ -27,8 +33,8 @@ import { Component } from '@angular/core';
        Searching for... {{name}}
       </div>
     </div>
-  `,
-  //templateUrl: './app.component.html',
+  `, */
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
@@ -37,7 +43,32 @@ export class AppComponent {
   name: string = '';
 
 
-   
+   passengers: Passenger[] = [{
+     id: 1,
+     fullname: 'Stephen',
+     checkedIn: true
+   },
+   {
+    id: 2,
+    fullname: 'James',
+    checkedIn: false
+  },
+  {
+    id: 3,
+    fullname: 'Rose',
+    checkedIn: true
+  },
+  {
+    id: 4,
+    fullname: 'Louse',
+    checkedIn: true
+  },
+  {
+    id: 5,
+    fullname: 'Sasha',
+    checkedIn: false
+  },
+  ]
   handleChange(value: string) {
     this.name = value;
   } 
