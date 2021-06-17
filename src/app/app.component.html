@@ -10,7 +10,7 @@
             <div class="date">
                 Check in date: 
                 {{ passenger.checkInDate ? 
-                ( passenger.checkInDate | date: 'yMMMMd' | uppercase ) : 'Not checked in' }}
+                ( passenger.checkInDate | date: 'd MMMM y' | uppercase ) : 'Not checked in' }}
             </div>
         </li>
     </ul>
