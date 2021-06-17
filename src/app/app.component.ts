@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
 interface Passenger {
   id: number,
   fullname: string,
-  checkedIn: boolean
+  checkedIn: boolean,
+  checkInDate?: number
 }
 @Component({
   selector: 'app-root',
@@ -46,27 +47,32 @@ export class AppComponent {
    passengers: Passenger[] = [{
      id: 1,
      fullname: 'Stephen',
-     checkedIn: true
+     checkedIn: true,
+     checkInDate: 1623941565321
    },
    {
     id: 2,
     fullname: 'James',
-    checkedIn: false
+    checkedIn: false,
+    checkInDate: null
   },
   {
     id: 3,
     fullname: 'Rose',
-    checkedIn: true
+    checkedIn: true,
+    checkInDate: 1623941578820
   },
   {
     id: 4,
     fullname: 'Louse',
-    checkedIn: true
+    checkedIn: true,
+    checkInDate: null
   },
   {
     id: 5,
     fullname: 'Sasha',
-    checkedIn: false
+    checkedIn: false,
+    checkInDate: 1623941585197
   },
   ]
   handleChange(value: string) {
