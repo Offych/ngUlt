@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 import { AppComponent } from './app.component';
+import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashboard.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    PassengerDashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
