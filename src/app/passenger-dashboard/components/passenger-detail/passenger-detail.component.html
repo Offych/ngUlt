@@ -1,1 +1,13 @@
-<p>passenger-detail works!</p>
+<div>
+    <span 
+    class='status'
+    [class.checked-in]="detail.checkedIn"></span> {{ detail.fullname }}
+    <div class="date">
+        Check in date: 
+        {{ detail.checkInDate ? 
+        ( detail.checkInDate | date: 'd MMMM y' | uppercase ) : 'Not checked in' }}
+    </div>
+    <div>
+        Children: {{ detail.children?.length || 0 }}
+    </div>
+</div>
