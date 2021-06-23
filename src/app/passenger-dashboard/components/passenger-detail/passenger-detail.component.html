@@ -1,7 +1,16 @@
 <div>
-    <span 
-    class='status'
-    [class.checked-in]="detail.checkedIn"></span> {{ detail.fullname }}
+    <div>
+            <span class='status' [class.checked-in]="detail.checkedIn"></span> 
+    </div>
+    <div *ngIf='editing'>
+        <input type="text" 
+        [value]='detail.fullname'
+        (input)="onNameChange(name.value)"
+        #name>
+    </div>
+    <div *ngIf="!editing">
+            {{ detail.fullname }}
+    </div>
     <div class="date">
         Check in date: 
         {{ detail.checkInDate ? 
@@ -10,4 +19,8 @@
     <div>
         Children: {{ detail.children?.length || 0 }}
     </div>
+    <button class="btn btn-primary"
+    (click)="toggleEdit()"> {{ editing ? 'Done' : 'Edit'}}</button>
+    <button class="btn btn-danger"
+    (click)="onRemove()"> Remove </button>
 </div>
