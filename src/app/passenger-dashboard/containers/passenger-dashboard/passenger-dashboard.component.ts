@@ -6,28 +6,7 @@ import { Passenger } from '../../models/passenger.interface';
 @Component({
     selector: 'passenger-dashboard',
     styleUrls: ['passenger-dashboard.components.scss'],
-    template: `
-        <div>
-        <h3>Airline Passengeres</h3>
-        <ul>
-            <li *ngFor="let passenger of passengers; let i  = index; ">
-                <span 
-                class='status'
-                [class.checked-in]="passenger.checkedIn"></span>
-                {{ i }} : {{ passenger.fullname }}
-     <!--            <p>{{ passenger | json }}</p> -->
-                <div class="date">
-                    Check in date: 
-                    {{ passenger.checkInDate ? 
-                    ( passenger.checkInDate | date: 'd MMMM y' | uppercase ) : 'Not checked in' }}
-                </div>
-                <div>
-                    Children: {{ passenger.children?.length || 0 }}
-                </div>
-            </li>
-        </ul>
-        </div>
-    `
+    templateUrl: 'passenger-dashboard.component.html'
 })
 
 export class PassengerDashboardComponent implements OnInit {
