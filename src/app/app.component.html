@@ -6,11 +6,14 @@
             class='status'
             [class.checked-in]="passenger.checkedIn"></span>
             {{ i }} : {{ passenger.fullname }}
-            <p>{{ passenger | json }}</p>
+ <!--            <p>{{ passenger | json }}</p> -->
             <div class="date">
                 Check in date: 
                 {{ passenger.checkInDate ? 
                 ( passenger.checkInDate | date: 'd MMMM y' | uppercase ) : 'Not checked in' }}
+            </div>
+            <div>
+                Children: {{ passenger.children?.length || 0 }}
             </div>
         </li>
     </ul>
