@@ -2,17 +2,13 @@
   "passengers": [
     {
       "id": 1,
-      "fullname": "Sashko123",
+      "fullname": "Resiii1",
       "checkedIn": true,
-      "checkInDate": 1623941565321,
+      "checkInDate": 1623941578820,
       "children": [
         {
-          "name": "Ted",
-          "age": 12
-        },
-        {
-          "name": "Chloe",
-          "age": 7
+          "name": "Jessica",
+          "age": 1
         }
       ]
     },
