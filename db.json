@@ -5,45 +5,36 @@
       "fullname": "Resiii1",
       "checkedIn": true,
       "checkInDate": 1623941578820,
-      "children": [
-        {
-          "name": "Jessica",
-          "age": 1
-        }
-      ]
+      "baggage": ""
+    
     },
     {
       "id": 2,
       "fullname": "James",
       "checkedIn": false,
       "checkInDate": null,
-      "children": null
+      "baggage": ""
     },
     {
       "id": 3,
       "fullname": "Rose",
       "checkedIn": true,
       "checkInDate": 1623941578820,
-      "children": [
-        {
-          "name": "Jessica",
-          "age": 1
-        }
-      ]
+      "baggage": ""
     },
     {
       "id": 4,
       "fullname": "Louse",
       "checkedIn": true,
       "checkInDate": null,
-      "children": null
+      "baggage": ""
     },
     {
       "id": 5,
       "fullname": "Sasha",
       "checkedIn": false,
       "checkInDate": 1623941585197,
-      "children": null
+      "baggage": ""
     }
   ]
 }
