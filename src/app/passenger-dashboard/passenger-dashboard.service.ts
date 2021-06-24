@@ -9,11 +9,21 @@ const PASSENGER_URL: string = "http://localhost:4000/passengers";
   providedIn: 'root'
 })
 export class PassengerDashboardService {
-
+  
 
   constructor(private http: HttpClient) { }
   
   getPassengers(): Observable<Passenger[]> {
     return this.http.get<Passenger[]>(PASSENGER_URL);
+  }
+
+  updatePassenger(passenger: Passenger) {
+    const url = `${PASSENGER_URL}/${passenger.id}`
+    return this.http.put(url, passenger)
+  }
+
+  removePassenger(passenger: Passenger) {
+    const url = `${PASSENGER_URL}/${passenger.id}`
+    return this.http.delete(url)
   }
 }
