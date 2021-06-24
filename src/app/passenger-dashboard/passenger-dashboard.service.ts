@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Passenger } from './models/passenger.interface';
 import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 
 const PASSENGER_URL: string = "http://localhost:4000/passengers";
@@ -16,6 +17,11 @@ export class PassengerDashboardService {
   getPassengers(): Observable<Passenger[]> {
     return this.http.get<Passenger[]>(PASSENGER_URL);
   }
+  
+  getPassenger(id: number): Observable<Passenger> {
+    let url = `${PASSENGER_URL}/${id}`;
+    return this.http.get<Passenger>(url);
+  }
 
   updatePassenger(passenger: Passenger) {
     let headers = new HttpHeaders({
@@ -29,4 +35,6 @@ export class PassengerDashboardService {
     const url = `${PASSENGER_URL}/${passenger.id}`
     return this.http.delete(url)
   }
+  
+  
 }
