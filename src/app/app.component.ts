@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 
-
+interface Nav {
+  link: string,
+  name: string,
+  exact: boolean
+}
 @Component({
   selector: 'app-root',
   /* template: `
@@ -36,7 +40,18 @@ export class AppComponent {
   title: string = '';
   logo: string = "https://blog.whoishiring.io/content/images/2017/03/todd_us.png"
   name: string = '';
-
+  nav: Nav[] = [
+    {
+      link: '/',
+      name: 'Home',
+      exact: true
+    },
+    {
+      link: '/oops',
+      name: '404',
+      exact: false
+    }
+  ];
 
    
   handleChange(value: string) {
